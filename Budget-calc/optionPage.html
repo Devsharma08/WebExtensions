@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Manager Options</title>
+  <style>
+    :root {
+      --primary-color: #4a90e2;
+      --bg-color: #f4f7f6;
+      --card-bg: #ffffff;
+      --text-color: #333;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    section {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      width: 350px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .details-container {
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    h2 {
+      font-size: 1rem;
+      margin-top: 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    #limitDetail, #spentDetail {
+      font-weight: bold;
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box; /* Ensures padding doesn't affect width */
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    #saveLimit {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    #resetLimit {
+      background-color: #e74c3c;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+    <section>
+      <header>
+        <h1>Budget Manager Options</h1>
+      </header>
+      
+      <div class="details-container">
+        <h2>Current Status</h2>
+        <div id="limitDetail">Limit: Loading...</div>
+        <div id="spentDetail">Spent: Loading...</div>
+      </div>
+
+      <input type="text" placeholder="Enter New Limit" id="limit">
+      
+      <div class="btn-group">
+        <button id="saveLimit">Save Limit</button>
+        <button id="resetLimit">Reset Limit</button>
+      </div>
+    </section>
+
+    <script src="./options.js"></script>
+</body>
+</html>

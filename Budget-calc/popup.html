@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 1. Global Styles */
+    :root {
+      --primary: #4ade80; /* Success Green */
+      --danger: #f87171;  /* Warning Red */
+      --bg: #1e293b;      /* Deep Slate Blue */
+      --card: #334155;    /* Lighter Slate */
+      --text: #f8fafc;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      width: 300px; /* Fixed width for Extension */
+      padding: 15px;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    h1 {
+      font-size: 1.2rem;
+      text-align: center;
+      margin: 0 0 10px 0;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* 2. Stats Dashboard */
+    .dashboard {
+      background: var(--card);
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .stat-label { font-size: 0.9rem; opacity: 0.8; }
+    .stat-value { font-weight: bold; font-size: 1rem; }
+    #spent { color: var(--danger); }
+    #limit { color: var(--primary); }
+
+    /* 3. Input Section */
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    h3 { font-size: 0.9rem; margin: 0; }
+
+    input[type="number"] {
+      background: #0f172a;
+      border: 1px solid #475569;
+      border-radius: 6px;
+      padding: 10px;
+      color: white;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    input[type="number"]:focus {
+      border-color: var(--primary);
+    }
+
+    input[type="button"] {
+      background-color: var(--primary);
+      color: #064e3b;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.1s, background 0.2s;
+    }
+
+    input[type="button"]:hover {
+      background-color: #22c55e;
+    }
+
+    input[type="button"]:active {
+      transform: scale(0.96);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Budget Tracker</h1>
+    
+    <div class="dashboard">
+      <div class="stat-row">
+        <span class="stat-label">Total Spent:</span>
+        <span class="stat-value">$<span id="spent">0</span></span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Limit:</span>
+        <span class="stat-value">$<span id="limit">500</span></span>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <h3>Add Transaction</h3>
+      <input type="number" id="amount" placeholder="0.00">
+      <input type="button" id="addAmount" value="Add to Spent">
+    </div>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
