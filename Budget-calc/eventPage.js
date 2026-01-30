@@ -4,6 +4,10 @@ chrome.runtime.onInstalled.addListener(() => {
     id: "spendAmount",
     title: "Add '%s' to spendings",
     contexts: ["selection"]
+  })
+  chrome.storage.sync.get({ tempLimit: 0 }, (data) => {
+    chrome.action.setBadgeText({ text: data.tempLimit.toString() });
+    chrome.action.setBadgeBackgroundColor({ color: "#090a0e" });
   });
 });
 
