@@ -18,8 +18,17 @@
     "64": "images/icon-64.png",
     "128": "images/icon-128.png"
   },
+  "background":{ 
+    "service_worker":"eventPage.js",
+    "type":"module"
+  },
   "permissions": [
-    "storage"
+    "storage",
+    "notifications",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "<all_urls>"
   ],
   "options_page":"optionPage.html"
 }

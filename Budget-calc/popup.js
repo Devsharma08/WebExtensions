@@ -24,7 +24,14 @@ amountBtn.addEventListener('click', () => {
 
     // Check BEFORE updating
     if (limitVal < amountVal) {
-        alert("Limit Exceeded !!");
+        let not1 = 'largeamount';
+        chrome.notifications.clear(not1);
+        chrome.notifications.create(not1,{
+          type:'basic',
+          iconUrl:'/images/icon-128.png',
+          title:'Entered Amount Too Large',
+          message:`You Have Entered Amount That exceeds your Limit by ${ (amountVal - limitVal).toFixed(2) }`
+        })
         return; 
     }
 
@@ -33,8 +40,8 @@ amountBtn.addEventListener('click', () => {
     
     // Update the actual values and seting values to chrome storage
     chrome.storage.sync.set({tempSpent:spentVal,tempLimit:limitVal},()=>{
-      spent.innerText = spentVal ;
-      limit.innerText = limitVal ;
+      spent.innerText = spentVal.toFixed(2) ;
+      limit.innerText = limitVal.toFixed(2) ;
   
       // UX: Clear the input box after a successful add
       amount.value = "";

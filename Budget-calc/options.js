@@ -7,8 +7,8 @@ let spentDetail = document.getElementById('spentDetail');
 window.addEventListener('load', () => {
     chrome.storage.sync.get({ tempLimit: 0, tempSpent: 0 }, (data) => {
         // We use textContent or innerText to avoid overwriting the container style
-        limitDetail.innerHTML = `<h2>${data.tempLimit}</h2>`;
-        spentDetail.innerHTML = `<h2>${data.tempSpent}</h2>`;
+        limitDetail.innerHTML = `<h2>Limit: ${data.tempLimit}</h2>`;
+        spentDetail.innerHTML = `<h2>Spent: ${data.tempSpent}</h2>`;
     });
 });
 
