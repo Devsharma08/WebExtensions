@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 3.0,
   "name": "Budget Estimator",
   "description": "Track your spending and manage your budget limits directly from your browser.",
   "version": "1.0",

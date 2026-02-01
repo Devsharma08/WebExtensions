@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZenMode Styler</title>
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --bg-panel: #ffffff;
+      --text-main: #1f2937;
+      --border: rgba(0, 0, 0, 0.08);
+    }
+
+    /* Dark theme for the POPUP itself */
+    body.popup-dark {
+      --bg-panel: #111827;
+      --text-main: #f9fafb;
+      --border: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      width: 240px;
+      background: var(--bg-panel);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, sans-serif;
+      padding: 16px;
+      margin: 0;
+      transition: background 0.3s ease;
+    }
+
+    h2 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 12px 0;
+      opacity: 0.6;
+    }
+
+    .button-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    button {
+      all: unset;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    /* Hover effects */
+    button:hover {
+      transform: scale(1.02);
+      filter: brightness(1.1);
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    /* Specific Styles */
+    .btn-dark { background: #1f2937; color: #ffffff; }
+    .btn-sepia { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+    .btn-reset { background: var(--primary); color: white; border: none; }
+
+    /* Indicator for active mode */
+    button.active {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    .icon { font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>Theme Settings</h2>
+  <div class="button-stack">
+    <button class="btn-dark" id="dark">
+      <span>Dark Mode</span>
+      <span class="icon">🌙</span>
+    </button>
+    <button class="btn-sepia" id="sepia">
+      <span>Sepia Reading</span>
+      <span class="icon">📜</span>
+    </button>
+    <button class="btn-reset" id="reset">
+      <span>Default View</span>
+      <span class="icon">🔄</span>
+    </button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
