@@ -1,0 +1,13 @@
+{
+  "manifest_version":3,
+  "name":"wikipedia reader",
+  "description":"this is wikipedia reader which hides the distracting elements from the page and enlarges the content for better reding.",
+  "version":"1.0",
+  "content_scripts":[
+    {
+    "matches":["https://*.wikipedia.org/*"],
+    "js":["content.js"],
+    "run_at":"document_idle"
+    }
+  ]
+}
