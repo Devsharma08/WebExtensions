@@ -1,7 +1,7 @@
 
 console.log("wikipedia reader extension in use");
 
-
+document.body.style.setProperty('filter','sepia(.8)','important')
 const elementsToHide = [
     '#mw-panel',           
     '#p-navigation',       
@@ -24,7 +24,7 @@ if (content) {
 
     content.style.boxSizing = 'border-box';
     content.style.margin = '0 auto';
-    content.style.maxWidth = '1000px';
+    content.style.maxWidth = '800px';
     content.style.width = '100%';
     
     // Dynamic padding based on device type
